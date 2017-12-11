@@ -12,6 +12,9 @@ const id = req.user._id;
   .populate('publication')
   .exec((err, relation) => {
     res.status(200).json(relation)
+    // relation.forEach((relation) => {
+    //   console.log(relation.comments)
+    // })
   })
 })
 

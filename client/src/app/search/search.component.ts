@@ -37,7 +37,7 @@ searchVideos(e){
   })
 
 }
-saveTheVideoPublication(video) {
+saveTheVideoPublication(video){
   this.VideoSearch.saveVideoPublication(video)
   .subscribe(video => {
     this.router.navigate(['/profile']);

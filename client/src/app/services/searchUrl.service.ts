@@ -19,9 +19,8 @@ export class searchUrlService {
                       .map(res => res.json());
     }
 
-    saveUrlPublication(publi) {
-      console.log(publi)
-      return this.http.post(`${BASEURL}`, publi, this.options)
+    saveUrlPublication(publi,comments) {
+      return this.http.post(`${BASEURL}`, [publi,comments], this.options)
       .map(res =>res.json());
     }
 }

@@ -120,12 +120,12 @@ router.get('/video/youtube', (req, res, render) => {
         image: video.thumbnails.default.url,
         createdAt: video.publishedAt
       }
-     })
-     res.status(200).json(videoResults)
-   });
+    })
+    res.status(200).json(videoResults)
+  });
 });
 
-router.post('/video/youtube/detail', (req,res,render) =>{
+router.post('/video/youtube/detail', (req, res, render) => {
 
   const newPublication = new Publication({
     title: req.body.title,
@@ -134,22 +134,24 @@ router.post('/video/youtube/detail', (req,res,render) =>{
     createdAt: req.body.publishedAt,
     category: "Video"
   })
-//find one video and save
-  Publication.findOne({ 'title': req.body.title }, (err, publication) => {
-    if (err) { return next(err) }
-      else if (publication) {
-        let newRelation = new Relational({
-          creator: req.user._id,
-          publication: publication._id,
-          comments: req.body.comments
-        });
-        newRelation.save()
+  //find one video and save
+  Publication.findOne({
+    'title': req.body.title
+  }, (err, publication) => {
+    if (err) {
+      return next(err)
+    } else if (publication) {
+      let newRelation = new Relational({
+        creator: req.user._id,
+        publication: publication._id,
+        comments: req.body.comments
+      });
+      newRelation.save()
         .then(saved => {
           res.status(200).json(saved)
         });
-    }
-    else {
-        newPublication.save()
+    } else {
+      newPublication.save()
         .then(answer => {
           let newRelation = new Relational({
             creator: req.user._id,
@@ -157,13 +159,13 @@ router.post('/video/youtube/detail', (req,res,render) =>{
             comments: req.body.comments || ''
           });
           newRelation.save()
-          .then(saved => {
-            res.status(200).json(saved)
-          })
+            .then(saved => {
+              res.status(200).json(saved)
+            })
         })
-      .catch(err => {
-        console.log(err)
-      })
+        .catch(err => {
+          console.log(err)
+        })
     }
   })
 });
@@ -188,44 +190,75 @@ router.get('/publi', (req, res, next) => {
 
 
 router.post('/publi', (req, res, next) => {
-    const newPublication = new Publication({
-      title: req.body.title,
-      image: req.body.image,
-      author: req.body.author,
-      link: req.body.link,
-      category: "Publication"
-    })
-    Publication.findOne({'link': req.body.link}, (err, doc) => {
-        if (err) { return next(err) } else if (doc) {
-          let newRelation = new Relational({
-            creator: req.user._id,
-            publication: doc._id,
-            comments: req.body.comments || ''
+      const newPublication = new Publication({
+        title: req.body[0].title,
+        image: req.body[0].image,
+        author: req.body[0].author,
+        link: req.body[0].link,
+        category: "Publication"
+      })
+      Publication.findOne({
+          "link": req.body[0].link
+        })
+        .then(publication => {
+            if (publication) {
+              let newRelation = new Relational({
+                creator: req.user._id,
+                publication: publication._id,
+                comments: req.body[1] || ''
+              });
+              newRelation.save()
+                .then(saved => {
+                  res.status(200).json(saved)
+                })
+            } else {
+              newPublication.save()
+                .then(publication => {
+                  let newRelation = new Relational({
+                    creator: req.user._id,
+                    publication: publication._id,
+                    comments: req.body[1].comments || ''
+                  });
+                  newRelation.save()
+                    .then(relation => {
+                      res.status(200).json(relation)
+                    })
+                })
+            }})
+          .catch(err => {
+            console.log(err)
           });
-          newRelation.save()
-          .then(saved => {
-            res.status(200).json(saved)
-          })
-        } else {
-          newPublication.save()
-          .then(answer => {
-            let newRelation = new Relational({
-              creator: req.user._id,
-              publication: answer._id,
-              comments: req.body.comments || ''
-            });
-            newRelation.save()
-              .then(saved => {
-                res.status(200).json(saved)
-              })
-            })
-            .catch(err => {
-              console.log(err)
-            })
-        }
-    })
-});
+          // Publication.findOne({'link': req.body[0].link}, (err, doc) => {
+          //     if (err) { return next(err) } else if (doc) {
+          //       let newRelation = new Relational({
+          //         creator: req.user._id,
+          //         publication: doc._id,
+          //         comments: req.body[1].comments || ''
+          //       });
+          //       newRelation.save()
+          //       .then(saved => {
+          //         res.status(200).json(saved)
+          //       })
+          //     } else {
+          //       newPublication.save()
+          //       .then(answer => {
+          //         let newRelation = new Relational({
+          //           creator: req.user._id,
+          //           publication: answer._id,
+          //           comments: req.body[1].comments || ''
+          //         });
+          //         newRelation.save()
+          //           .then(saved => {
+          //             res.status(200).json(saved)
+          //           })
+          //         })
+          //         .catch(err => {
+          //           console.log(err)
+          //         })
+          //     }
+          // })
+        });
 
 
 
-module.exports = router;
+    module.exports = router;

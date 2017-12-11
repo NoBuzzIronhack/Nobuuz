@@ -21,10 +21,11 @@ searchPubli(link){
   })
 }
 
-savePubli() {
-  this.UrlSearch.saveUrlPublication(this.myPubli)
+savePubli(comments) {
+  this.UrlSearch.saveUrlPublication(this.myPubli, comments)
   .subscribe(response => {
     this.router.navigate(['/profile']);
+    console.log(this.myPubli);
   });
 }
 }

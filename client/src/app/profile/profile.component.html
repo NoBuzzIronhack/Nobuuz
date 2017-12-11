@@ -4,19 +4,48 @@
 <div class="publications">
 <ul>
   <li *ngFor = "let publication of myPublications" class = "">
-  {{publication.publication.title}}
-  <br>
-    <br>
-    <div *ngIf='publication.publication.new == "youtube"'>
-      <iframe width="560" height="315" [src]="publication.publication.link" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen *ngIf= "publication.publication.link"></iframe>
-    </div>
-    <!-- <img [src]="publication.publication.image"> -->
-    <p>{{publication.publication.link}}</p>
+
+  <p>ARTICLES</p>
+  <div *ngIf='publication.publication.category == "Publication"'>
+  <p>{{publication.publication.title}}</p>
+  <p>{{publication.publication.author}}</p>
+  <img [src]="publication.publication.image">
+  <h3>Comments</h3>
+  <p>{{publication.comments}}</p>
+  <a href="{{publication.publication.link}}" target="_blank">See on Website</a>
+</div>
+
+<p>YOUTUBE VIDEO</p>
+<div *ngIf='publication.publication.category == "Video"'>
+<p>{{publication.publication.title}}</p>
+<p>{{publication.publication.author}}</p>
+<div *ngIf='publication.publication.new == "youtube"'>
+  <iframe width="560" height="315" [src]="publication.publication.link" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen *ngIf= "publication.publication.link"></iframe>
+</div>
+<h3>Comments</h3>
+<p>{{publication.comments}}</p>
+<a href="{{publication.publication.link}}" target="_blank">See on Website</a>
+</div>
+
+<p>BOOKS</p>
+<div *ngIf='publication.publication.category == "Book"'>
+<p>{{publication.publication.title}}</p>
+<p>{{publication.publication.author}}</p>
+<img [src]="publication.publication.image">
+<h3>Comments</h3>
+<p>{{publication.comments}}</p>
+<a href="{{publication.publication.link}}" target="_blank">See on Website</a>
+</div>
+
+<!-- <h2>Articles</h2>
+<h1>{{publication.publication.title}}</h1>
+<p>{{publication.publication.author}}</p>
+  <p>{{publication.publication.createdAt}}</p>
 
 
-  <br>
-  <!-- <img src="{{publication.image}}" alt=""> -->
-  <br>
+
+    <a href="{{publication.publication.link}}" target="_blank">See on Website</a>
+    <img [src]="publication.publication.image"> -->
 </li>
 </ul>
 </div>
