@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {UserSearchService} from '../services/user-search.service'
 import {ActivatedRoute, Router} from '@angular/router';
 import{PublicProfileService} from '../services/public-profile.service';
+
 @Component({
   selector: 'app-user-search',
   templateUrl: './user-search.component.html',
@@ -23,9 +24,8 @@ this.oneUsername = object;
 getUserProfile(oneUsername){
   this.publicProfileService.getPublicProfileList(oneUsername._id)
     .subscribe(response => {
-      this.publicProfileService.publicPublications = response
+      this.publicProfileService.publicPublications = response;
     });
+    this.router.navigate(['/public-profile', oneUsername._id]);
 }
-
-
 }
