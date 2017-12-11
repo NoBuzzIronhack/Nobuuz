@@ -127,15 +127,15 @@ router.get('/video/youtube', (req, res, render) => {
 router.post('/video/youtube/detail', (req, res, render) => {
 
   const newPublication = new Publication({
-    title: req.body.title,
-    image: req.body.image,
-    link: req.body.link,
-    createdAt: req.body.publishedAt,
+    title: req.body[0].title,
+    image: req.body[0].image,
+    link: req.body[0].link,
+    createdAt: req.body[0].publishedAt,
     category: "Video"
   })
   //find one video and save
   Publication.findOne({
-    'title': req.body.title
+    'title': req.body[0].title
   }, (err, publication) => {
     if (err) {
       return next(err)
@@ -143,7 +143,7 @@ router.post('/video/youtube/detail', (req, res, render) => {
       let newRelation = new Relational({
         creator: req.user._id,
         publication: publication._id,
-        comments: req.body.comments
+        comments: req.body[1] || ''
       });
       newRelation.save()
         .then(saved => {
@@ -155,7 +155,7 @@ router.post('/video/youtube/detail', (req, res, render) => {
           let newRelation = new Relational({
             creator: req.user._id,
             publication: answer._id,
-            comments: req.body.comments || ''
+            comments: req.body[1] || ''
           });
           newRelation.save()
             .then(saved => {

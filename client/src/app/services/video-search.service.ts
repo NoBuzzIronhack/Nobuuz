@@ -25,8 +25,8 @@ export class VideoSearchService {
     .map(res =>res.json());
       }
 //tengo que pasarle el video link para para que te salve en la base de declarations
-  saveVideoPublication(video) {
-    return this.http.post(`${BASEURL}/detail/`, video, this.options)
+  saveVideoPublication(video, comments) {
+    return this.http.post(`${BASEURL}/detail/`, [video, comments], this.options)
     .map(res =>res.json());
       }
 

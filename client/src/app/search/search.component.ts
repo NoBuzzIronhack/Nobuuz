@@ -37,8 +37,8 @@ searchVideos(e){
   })
 
 }
-saveTheVideoPublication(video){
-  this.VideoSearch.saveVideoPublication(video)
+saveTheVideoPublication(video, comments){
+  this.VideoSearch.saveVideoPublication(video, comments)
   .subscribe(video => {
     this.router.navigate(['/profile']);
   });
