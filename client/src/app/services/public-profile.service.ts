@@ -18,4 +18,8 @@ export class PublicProfileService {
     return this.http.get(`${BASEURL}/${id}`, this.options)
                     .map(res => res.json())
   }
+  getPublicProfilePublications():Observable<any>{
+    return this.http.get(`${BASEURL}`, this.options)
+                    .map(res => res.json())
+  }
 }

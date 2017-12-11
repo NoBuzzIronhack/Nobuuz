@@ -9,22 +9,22 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./public-profile.component.css']
 })
 export class PublicProfileComponent implements OnInit {
-  constructor(public publicProfileS: PublicProfileService, public sanitizer: DomSanitizer) { }
+  constructor(public publicProfileService: PublicProfileService, public sanitizer: DomSanitizer) { }
   ppPublications;
   ngOnInit() {
-    // this.publicProfileS.getPublicProfileList()
-    // .subscribe(ppList => {
-    //   this.ppPublications = ppList.map(e=>{
-    //     if(e.publication.link.split('.')[1]=='youtube'){
-    //       e.publication.link = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+e.publication.link.substr(e.publication.link.lastIndexOf('v=')+2, e.publication.link.length));
-    //       e.publication.new = 'youtube';
-    //       return e;
-    //     }else {
-    //       return e;
-    //
-    //     }
-    //   })
-    // });
+    this.publicProfileService.getPublicProfilePublications()
+    .subscribe(ppList => {
+      this.ppPublications = ppList.map(e=>{
+        if(e.publication.link.split('.')[1]=='youtube'){
+          e.publication.link = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+e.publication.link.substr(e.publication.link.lastIndexOf('v=')+2, e.publication.link.length));
+          e.publication.new = 'youtube';
+          return e;
+        }else {
+          return e;
+
+        }
+      })
+    });
   }
 
 }

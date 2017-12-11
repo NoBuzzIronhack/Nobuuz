@@ -5,18 +5,13 @@
 <ul>
   <li *ngFor = "let publication of ppPublications" class = "">
   {{publication.publication.title}}
-  <img src="{{publication.publication.image}}" alt="">
+  <!-- <img src="{{publication.publication.image}}" alt="">
   <br>
     <br>
     <div *ngIf='publication.publication.new == "youtube"'>
       <iframe width="560" height="315" [src]="publication.publication.link" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen *ngIf= "publication.publication.link"></iframe>
     </div>
-    <p>{{publication.publication.link}}</p>
-
-
-  <br>
-
-  <br>
+    <p>{{publication.publication.link}}</p> -->
 </li>
 </ul>
 </div>
