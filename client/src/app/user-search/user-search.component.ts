@@ -15,9 +15,10 @@ export class UserSearchComponent implements OnInit {
   ngOnInit() {
   }
 
-findOneUser(username){
-this.UserSearch.searchOneUser(this.queryUsername).subscribe(username => {
-  this.oneUsername = username;
+findOneUser(){
+this.UserSearch.searchOneUser(this.queryUsername).subscribe(object => {
+this.oneUsername = object.username
+ console.log(object._id)
 })
 }
 

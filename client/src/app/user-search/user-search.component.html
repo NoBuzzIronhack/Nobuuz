@@ -6,7 +6,32 @@
 <input placeholder="Search any user" [(ngModel)]="queryUsername">
 <button (click)='findOneUser()' name="button">Search</button>
 
-<div *ngIf="oneUser" class= "">
-  <a [routerLink]='["profile/",user.id]'><h1>{{ oneUser.username }}</h1></a>
-
+<div *ngIf="oneUsername">
+    <!-- <a [routerLink]='["/book-detail/",book.link]' > -->
+  <h1>{{ oneUsername }}</h1>
 </div>
+
+
+
+  <!-- <a [routerLink]='["profile/",user.id]'><h1>{{ oneUser.username }}</h1></a> -->
+
+
+
+<!-- // para el fallow  -->
+<!--
+<label for="food_name"> Search Food: </label>
+   <input id="food_name" placeholder="type a food"
+           type="text" [(ngModel)]="pattern">
+           or
+
+           <ul>
+         <li *ngFor ="let food of foods | filter:'name':pattern; let i = index">
+           <h2>{{food.name}}</h2>
+           <p> Cal:{{food.calories}}</p>
+             <img src="{{food.image}}" alt="">
+             <br>
+               <label for="{{food.quantity}}">Quantity:</label>
+             <input type="number" [(ngModel)]='quant'>
+               <button (click)= "addTodaysFood(food, quant)">Add Today's Food</button>
+         </li>
+       </ul> -->
