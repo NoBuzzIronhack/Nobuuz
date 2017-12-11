@@ -37,25 +37,24 @@ router.get('/books/detail', (req, res, next) => {
 
 router.post('/books/detail', (req, res, next) => {
   const newPublication = new Publication({
-    title: req.body.title,
-    image: req.body.image,
-    author: req.body.author,
-    rating: req.body.rating || '',
-    link: "https://www.amazon.com/gp/product/" + req.body.isbn,
+    title: req.body[0].title,
+    image: req.body[0].image,
+    author: req.body[0].author,
+    rating: req.body[0].rating || '',
+    link: "https://www.amazon.com/gp/product/" + req.body[0].isbn,
     category: "Book"
   })
 
   Publication.findOne({
-    'title': req.body.title
-  }, (err, publication) => {
-    if (err) {
-      return next(err)
-    } else if (publication) {
-      let newRelation = new Relational({
-        creator: req.user._id,
-        publication: publication._id,
-        comments: req.body.comments
-      });
+      "title": req.body.title
+    })
+    .then(publication => {
+        if (publication) {
+          let newRelation = new Relational({
+            creator: req.user._id,
+            publication: publication._id,
+            comments: req.body[1] || ''
+          });
       newRelation.save()
         .then(saved => {
           res.status(200).json(saved)
@@ -66,7 +65,7 @@ router.post('/books/detail', (req, res, next) => {
           let newRelation = new Relational({
             creator: req.user._id,
             publication: answer._id,
-            comments: req.body.comments || ''
+            comments: req.body[1] || ''
           });
           newRelation.save()
             .then(saved => {
@@ -228,35 +227,7 @@ router.post('/publi', (req, res, next) => {
           .catch(err => {
             console.log(err)
           });
-          // Publication.findOne({'link': req.body[0].link}, (err, doc) => {
-          //     if (err) { return next(err) } else if (doc) {
-          //       let newRelation = new Relational({
-          //         creator: req.user._id,
-          //         publication: doc._id,
-          //         comments: req.body[1].comments || ''
-          //       });
-          //       newRelation.save()
-          //       .then(saved => {
-          //         res.status(200).json(saved)
-          //       })
-          //     } else {
-          //       newPublication.save()
-          //       .then(answer => {
-          //         let newRelation = new Relational({
-          //           creator: req.user._id,
-          //           publication: answer._id,
-          //           comments: req.body[1].comments || ''
-          //         });
-          //         newRelation.save()
-          //           .then(saved => {
-          //             res.status(200).json(saved)
-          //           })
-          //         })
-          //         .catch(err => {
-          //           console.log(err)
-          //         })
-          //     }
-          // })
+
         });
 
 

@@ -22,6 +22,7 @@ export class BookDetailComponent implements OnInit {
 saveThePublication(comments) {
   this.BookSearch.saveBookPublication(this.myBook, comments)
   .subscribe(response =>{
+    console.log(response);
     this.router.navigate(['/profile']);
   });
 }

@@ -25,7 +25,7 @@ export class SearchService {
     }
 
     saveBookPublication(book, comments) {
-      return this.http.post(`${BASEURL}/detail/`, [book,comments], this.options)
+      return this.http.post(`${BASEURL}/detail/`, [book, comments], this.options)
       .map(res =>res.json());
     }
 
