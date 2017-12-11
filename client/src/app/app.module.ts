@@ -20,6 +20,8 @@ import { ProfileService } from './services/profile.service';
 import { MenuComponent } from './menu/menu.component';
 import { UserSearchComponent } from './user-search/user-search.component';
 import {UserSearchService} from './services/user-search.service';
+import { PublicProfileComponent } from './public-profile/public-profile.component';
+import {PublicProfileService} from './services/public-profile.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import {UserSearchService} from './services/user-search.service';
     VideoDetailComponent,
     SearchUrlComponent,
     MenuComponent,
-    UserSearchComponent
+    UserSearchComponent,
+    PublicProfileComponent
     ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import {UserSearchService} from './services/user-search.service';
     HttpModule,
     RouterModule.forRoot(myRoutes)
   ],
-  providers: [AuthService, SearchService, searchUrlService, ProfileService, VideoSearchService, UserSearchService],
+  providers: [AuthService, SearchService, searchUrlService, ProfileService,
+    VideoSearchService, UserSearchService, PublicProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

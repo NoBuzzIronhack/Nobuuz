@@ -15,6 +15,7 @@ const scrap = require('./routes/scrap');
 const auth = require('./routes/auth');
 const profile = require('./routes/profile');
 const userSearch = require('./routes/user-search');
+const publicProfile = require('./routes/public-profile')
 const app = express();
 
 
@@ -60,8 +61,10 @@ app.use('/', index);
 app.use('/publication', publication);
 app.use('/', scrap);
 app.use('/', profile);
+app.use('/', publicProfile);
 app.use('/api/auth', auth);
 app.use('/', userSearch);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

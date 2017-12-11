@@ -5,7 +5,7 @@ const User = require('../models/User');
 const router = express.Router();
 
 router.get('/user-search', (req, res, next) => {
-const username = req.body.username
+let username = req.query.q;
 
 if(!username){
   res.status(400).json({message:"Provide a valid username"});
@@ -18,6 +18,8 @@ User.findOne( {'username': username}, (error, user) => {
       return;
     } else {
       res.status(200).json(user)
+      console.log(user)
+
     }
   })
 });
