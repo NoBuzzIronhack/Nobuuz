@@ -5,6 +5,8 @@ import {BookDetailComponent} from './book-detail/book-detail.component';
 import {ProfileComponent} from './profile/profile.component';
 import {VideoDetailComponent} from './video-detail/video-detail.component'
 import { SearchUrlComponent } from './search-url/search-url.component'
+import {UserSearchComponent} from './user-search/user-search.component';
+
 
 
 const myRoutes: Routes =[
@@ -15,7 +17,8 @@ const myRoutes: Routes =[
 {path:'video-detail/:url', component:VideoDetailComponent},
 {path: 'profile', component: ProfileComponent},
 {path: 'url-search', component: SearchUrlComponent },
-{path: '**', component: CategoryComponent }
+{path: 'user-search', component: UserSearchComponent }
+// {path: '**', component: CategoryComponent }
 
 ];
 

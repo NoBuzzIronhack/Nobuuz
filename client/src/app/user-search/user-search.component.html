@@ -1,0 +1,12 @@
+<p>
+  user-search works!
+</p>
+
+
+<input placeholder="Search any user" [(ngModel)]="queryUsername">
+<button (click)='findOneUser()' name="button">Search</button>
+
+<div *ngIf="oneUser" class= "">
+  <a [routerLink]='["profile/",user.id]'><h1>{{ oneUser.username }}</h1></a>
+
+</div>

@@ -14,7 +14,9 @@ const index = require('./routes/index');
 const scrap = require('./routes/scrap');
 const auth = require('./routes/auth');
 const profile = require('./routes/profile');
+const userSearch = require('./routes/user-search');
 const app = express();
+
 
 mongoose.connect(process.env.DBURL).then(() => {
   console.log(`connected to DB ${process.env.DBURL}`);
@@ -59,6 +61,7 @@ app.use('/publication', publication);
 app.use('/', scrap);
 app.use('/', profile);
 app.use('/api/auth', auth);
+app.use('/', userSearch);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
