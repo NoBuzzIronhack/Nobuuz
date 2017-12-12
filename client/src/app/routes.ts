@@ -6,10 +6,13 @@ import {ProfileComponent} from './profile/profile.component';
 import {VideoDetailComponent} from './video-detail/video-detail.component'
 import { SearchUrlComponent } from './search-url/search-url.component'
 import {UserSearchComponent} from './user-search/user-search.component';
+import {PortadaComponent} from './portada/portada.component';
+import {LoginFormComponent} from './login-form/login-form.component';
 
 
 
 const myRoutes: Routes =[
+{path: 'login', component: LoginFormComponent},
 {path: 'categories', component: CategoryComponent},
 {path: 'book-search', component: SearchComponent},
 {path: 'book-detail/:url', component: BookDetailComponent},
@@ -17,8 +20,8 @@ const myRoutes: Routes =[
 {path:'video-detail/:url', component:VideoDetailComponent},
 {path: 'profile', component: ProfileComponent},
 {path: 'url-search', component: SearchUrlComponent },
-{path: 'user-search', component: UserSearchComponent }
-// {path: '**', component: CategoryComponent }
+{path: 'user-search', component: UserSearchComponent },
+{path: '', component: PortadaComponent }
 
 ];
 

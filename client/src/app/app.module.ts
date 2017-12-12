@@ -22,7 +22,8 @@ import { UserSearchComponent } from './user-search/user-search.component';
 import {UserSearchService} from './services/user-search.service';
 import { MaterializeModule } from 'angular2-materialize';
 import 'materialize-css';
-import { MaterializeModule } from 'angular2-materialize';
+import { PortadaComponent } from './portada/portada.component';
+
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { MaterializeModule } from 'angular2-materialize';
     VideoDetailComponent,
     SearchUrlComponent,
     MenuComponent,
-    UserSearchComponent
+    UserSearchComponent,
+    PortadaComponent
     ],
   imports: [
     BrowserModule,
