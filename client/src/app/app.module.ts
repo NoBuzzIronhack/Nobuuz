@@ -21,9 +21,13 @@ import { MenuComponent } from './menu/menu.component';
 import { UserSearchComponent } from './user-search/user-search.component';
 import {UserSearchService} from './services/user-search.service';
 import { MaterializeModule } from 'angular2-materialize';
-import 'materialize-css';
-import { MaterializeModule } from 'angular2-materialize';
+import {PublicProfileComponent} from './public-profile/public-profile.component'
+import { FollowingComponent } from './following/following.component';
+import {PublicProfileService} from './services/public-profile.service';
 
+
+
+import 'materialize-css';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,9 @@ import { MaterializeModule } from 'angular2-materialize';
     VideoDetailComponent,
     SearchUrlComponent,
     MenuComponent,
-    UserSearchComponent
+    UserSearchComponent,
+    PublicProfileComponent,
+    FollowingComponent
     ],
   imports: [
     BrowserModule,
@@ -45,7 +51,8 @@ import { MaterializeModule } from 'angular2-materialize';
     RouterModule.forRoot(myRoutes),
 
   ],
-  providers: [AuthService, SearchService, searchUrlService, ProfileService, VideoSearchService, UserSearchService],
+  providers: [AuthService, SearchService, searchUrlService, ProfileService,
+    VideoSearchService, UserSearchService, PublicProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

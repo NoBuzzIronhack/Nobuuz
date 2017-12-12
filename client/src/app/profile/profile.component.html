@@ -4,6 +4,7 @@
 <div class="publications">
 <ul>
   <li *ngFor = "let publication of myPublications" class = "">
+<<<<<<< HEAD
 
   <p>ARTICLES</p>
   <div *ngIf='publication.publication.category == "Publication"'>
@@ -46,6 +47,21 @@
 
     <a href="{{publication.publication.link}}" target="_blank">See on Website</a>
     <img [src]="publication.publication.image"> -->
+=======
+  {{publication.publication.title}}
+  <img src="{{publication.publication.image}}" alt="">
+  <br>
+    <br>
+    <div *ngIf='publication.publication.new == "youtube"'>
+      <iframe width="560" height="315" [src]="publication.publication.link" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen *ngIf= "publication.publication.link"></iframe>
+    </div>
+    <p>{{publication.publication.link}}</p>
+
+
+  <br>
+
+  <br>
+>>>>>>> 58f64caae622bc3efa396acb67d39badbb57325e
 </li>
 </ul>
 </div>
