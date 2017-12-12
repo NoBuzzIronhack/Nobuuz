@@ -1,10 +1,6 @@
-<p>
-  book-detail works!
-</p>
-<div class="" *ngIf='!myBook'>
-  Cargando...
-</div>
-<div *ngIf="myBook" class= "">
+
+
+<!-- <div *ngIf="myBook" class= "">
   <h1>{{ myBook.title }}</h1>
   <img src="{{ myBook.image }}" alt="">  <br>
   <p>{{ myBook.author }}</p>
@@ -12,4 +8,30 @@
   <h3>Comments</h3>
   <input placeholder="Comment something" [(ngModel)]="comments">
   <button type="button" (click)='saveThePublication(comments)'>Add to my profile</button>
+</div> -->
+
+<div class="" *ngIf='!myBook'>
+  Cargando...
+</div>
+<div *ngIf="myBook" class= "">
+
+<div class="row">
+   <div class="col s12 m7">
+     <div class="card">
+       <div class="card-image">
+         <img src="{{ myBook.image }}" alt="">
+         <span class="card-title">  <h1>{{ myBook.title }}</h1>
+        </span>
+       </div>
+       <div class="card-content">
+         <p>{{ myBook.author }}</p>
+         <h3>Comments</h3>
+         <input placeholder="Comment something" [(ngModel)]="comments">
+       </div>
+       <div class="card-action">
+      <button type="button" (click)='saveThePublication(comments)'>Add to my profile</button>
+    </div>
+     </div>
+   </div>
+ </div>
 </div>

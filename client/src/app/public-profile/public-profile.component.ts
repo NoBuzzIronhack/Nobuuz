@@ -13,9 +13,12 @@ export class PublicProfileComponent implements OnInit {
   constructor(public publicProfileService: PublicProfileService, public sanitizer: DomSanitizer, public AuthService: AuthService, public route: ActivatedRoute, private router: Router) { }
   publicPublications;
   publicUser;
+  loggedUser;
   ngOnInit() {
     this.getUserProfile(this.publicProfileService.publicUsername);
     this.publicUser = this.publicProfileService.publicUsername;
+    this.loggedUser = this.AuthService.user;
+    console.log(this.publicUser, this.loggedUser)
   }
 
       getUserProfile(oneUsername){
@@ -35,7 +38,6 @@ export class PublicProfileComponent implements OnInit {
 
 
   followUser(oneUsername){
-    console.log(oneUsername)
       this.publicProfileService.follow(this.publicUser._id, this.AuthService.user)
       .subscribe(response => {
         // this.router.navigate(['/following'])

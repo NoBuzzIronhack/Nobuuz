@@ -1,7 +1,7 @@
 
 <h1>Public Publications</h1>
 <br>
-<div class="publications">
+<div class="publications" *ngIf="publicUser && loggedUser">
 <ul>
   <li *ngFor = "let publication of publicPublications" class = "">
   {{publication.publication.title}}
@@ -13,7 +13,8 @@
     </div>
     <p>{{publication.publication.link}}</p>
     <br>
-    <button (click)='followUser(oneUsername)'type="button" name="button">follow</button>
+    <button (click)='followUser(oneUsername)'type="button" name="button" *ngIf="loggedUser.following.indexOf(publicUser._id) == -1">follow</button>
+    <button (click)='followUser(oneUsername)'type="button" name="button" *ngIf="loggedUser.following.indexOf(publicUser._id) !== -1">stop following</button>
 </li>
 </ul>
 </div>

@@ -21,7 +21,6 @@ export class PublicProfileService {
   }
 
   follow(id, currentUserId):Observable<any>{
-    console.log(id,currentUserId)
     return this.http.post(`${BASEURL}/${id}`,{ loggedUserId: currentUserId }, this.options)
                     .map(res => res.json())
 

@@ -14,13 +14,23 @@ router.get('/public-profile/:id', (req, res, next) => {
 })
 
 router.post('/public-profile/:id', (req, res, next) => {
-       let publicUser = req.params.id;
+  let publicUser = req.params.id;
   User.findByIdAndUpdate(req.body.loggedUserId,{$push: {'following': publicUser}}, {new : true},)
   .then(user => {
     console.log(user);
     res.json(user)
   })
 })
+
+router.get('/dashboard', (req, res, next) => {
+  let user = req.user;
+  Relational.find({ creator: { $in: user.following } })
+  .populate('publication')
+  exec((err, relation) => {
+    res.status(200).json(relation)
+  })
+})
+
 
 
 module.exports = router;
