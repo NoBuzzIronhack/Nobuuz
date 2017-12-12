@@ -3,9 +3,10 @@
 <br>
 <div class="publications">
 <ul>
-  <li *ngFor = "let publication of ppPublications" class = "">
+  <li *ngFor = "let publication of publicPublications" class = "">
   {{publication.publication.title}}
-  <!-- <img src="{{publication.publication.image}}" alt="">
+  <br>
+  <img src="{{publication.publication.image}}" alt="">
   <br>
     <br>
     <div *ngIf='publication.publication.new == "youtube"'>

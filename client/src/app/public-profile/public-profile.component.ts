@@ -10,21 +10,32 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class PublicProfileComponent implements OnInit {
   constructor(public publicProfileService: PublicProfileService, public sanitizer: DomSanitizer) { }
-  ppPublications;
+  publicPublications;
   ngOnInit() {
-    this.publicProfileService.getPublicProfilePublications()
-    .subscribe(ppList => {
-      this.ppPublications = ppList.map(e=>{
-        if(e.publication.link.split('.')[1]=='youtube'){
-          e.publication.link = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+e.publication.link.substr(e.publication.link.lastIndexOf('v=')+2, e.publication.link.length));
-          e.publication.new = 'youtube';
-          return e;
-        }else {
-          return e;
+    this.getUserProfile(this.publicProfileService.publicUsername);
+  }
+  // getUserProfile(oneUsername){
+  //   this.publicProfileService.getPublicProfileList(oneUsername._id)
+  //     .subscribe(response => {
+  //       console.log(response);
+  //       this.publicPublications = response;
+  //     });
+  // }
 
-        }
-      })
-    });
+      getUserProfile(oneUsername){
+          this.publicProfileService.getPublicProfileList(oneUsername._id)
+          .subscribe(response => {
+            console.log(response);
+            this.publicPublications = response.map(e => {
+              if (e.publication.link.split('.')[1]=='youtube'){
+              e.publication.link = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+e.publication.link.substr(e.publication.link.lastIndexOf('v=')+2, e.publication.link.length));
+              e.publication.new = 'youtube';
+              return e
+            } else {
+              return e; 
+          }
+        })
+      });
   }
 
 }

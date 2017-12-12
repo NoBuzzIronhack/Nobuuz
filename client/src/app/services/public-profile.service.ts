@@ -11,15 +11,15 @@ export class PublicProfileService {
   options:Object = {
     withCredentials:true
   }
-  publicPublications;
+  publicUsername: Object;
 
   constructor(private http: Http) { }
+  
   getPublicProfileList(id):Observable<any>{
     return this.http.get(`${BASEURL}/${id}`, this.options)
                     .map(res => res.json())
+
+
   }
-  getPublicProfilePublications():Observable<any>{
-    return this.http.get(`${BASEURL}`, this.options)
-                    .map(res => res.json())
-  }
+
 }

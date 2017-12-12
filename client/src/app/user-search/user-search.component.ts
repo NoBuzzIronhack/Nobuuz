@@ -22,10 +22,7 @@ this.oneUsername = object;
 })
 }
 getUserProfile(oneUsername){
-  this.publicProfileService.getPublicProfileList(oneUsername._id)
-    .subscribe(response => {
-      this.publicProfileService.publicPublications = response;
-    });
+  this.publicProfileService.publicUsername = oneUsername;
     this.router.navigate(['/public-profile', oneUsername._id]);
 }
 }
