@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PublicProfileService } from '../services/public-profile.service'
 import { DomSanitizer } from '@angular/platform-browser';
+import {AuthService} from '../services/auth.service'
 
 
 @Component({
@@ -9,33 +10,36 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./public-profile.component.css']
 })
 export class PublicProfileComponent implements OnInit {
-  constructor(public publicProfileService: PublicProfileService, public sanitizer: DomSanitizer) { }
+  constructor(public publicProfileService: PublicProfileService, public sanitizer: DomSanitizer, public AuthService: AuthService) { }
   publicPublications;
+  publicUser;
   ngOnInit() {
     this.getUserProfile(this.publicProfileService.publicUsername);
+    this.publicUser = this.publicProfileService.publicUsername;
   }
-  // getUserProfile(oneUsername){
-  //   this.publicProfileService.getPublicProfileList(oneUsername._id)
-  //     .subscribe(response => {
-  //       console.log(response);
-  //       this.publicPublications = response;
-  //     });
-  // }
 
       getUserProfile(oneUsername){
           this.publicProfileService.getPublicProfileList(oneUsername._id)
           .subscribe(response => {
-            console.log(response);
             this.publicPublications = response.map(e => {
               if (e.publication.link.split('.')[1]=='youtube'){
               e.publication.link = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+e.publication.link.substr(e.publication.link.lastIndexOf('v=')+2, e.publication.link.length));
               e.publication.new = 'youtube';
               return e
             } else {
-              return e; 
+              return e;
           }
         })
       });
   }
 
+
+  followUser(oneUsername){
+    console.log(oneUsername)
+      this.publicProfileService.follow(this.publicUser._id, this.AuthService.user)
+      .subscribe(response => {
+        console.log(response)
+  });
+
+}
 }

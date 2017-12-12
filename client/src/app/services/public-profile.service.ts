@@ -14,11 +14,16 @@ export class PublicProfileService {
   publicUsername: Object;
 
   constructor(private http: Http) { }
-  
+
   getPublicProfileList(id):Observable<any>{
     return this.http.get(`${BASEURL}/${id}`, this.options)
                     .map(res => res.json())
+  }
 
+  follow(id, currentUserId):Observable<any>{
+    console.log(id,currentUserId)
+    return this.http.post(`${BASEURL}/${id}`,{ loggedUserId: currentUserId }, this.options)
+                    .map(res => res.json())
 
   }
 

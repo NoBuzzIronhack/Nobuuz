@@ -13,6 +13,14 @@ router.get('/public-profile/:id', (req, res, next) => {
   })
 })
 
+router.post('/public-profile/:id', (req, res, next) => {
+       let publicUser = req.params.id;
+  User.findByIdAndUpdate(req.body.loggedUserId,{$push: {'following': publicUser}}, {new : true},)
+  .then(user => {
+    console.log(user);
+    res.json(user)
+  })
+})
 
 
 module.exports = router;

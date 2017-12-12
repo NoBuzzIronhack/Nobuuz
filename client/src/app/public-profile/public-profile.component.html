@@ -8,11 +8,12 @@
   <br>
   <img src="{{publication.publication.image}}" alt="">
   <br>
-    <br>
     <div *ngIf='publication.publication.new == "youtube"'>
       <iframe width="560" height="315" [src]="publication.publication.link" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen *ngIf= "publication.publication.link"></iframe>
     </div>
-    <p>{{publication.publication.link}}</p> -->
+    <p>{{publication.publication.link}}</p>
+    <br>
+    <button (click)='followUser(oneUsername)'type="button" name="button">follow</button>
 </li>
 </ul>
 </div>
