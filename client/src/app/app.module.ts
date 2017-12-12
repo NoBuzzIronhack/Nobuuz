@@ -20,6 +20,10 @@ import { ProfileService } from './services/profile.service';
 import { MenuComponent } from './menu/menu.component';
 import { UserSearchComponent } from './user-search/user-search.component';
 import {UserSearchService} from './services/user-search.service';
+import { MaterializeModule } from 'angular2-materialize';
+import 'materialize-css';
+import { MaterializeModule } from 'angular2-materialize';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +42,8 @@ import {UserSearchService} from './services/user-search.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(myRoutes)
+    RouterModule.forRoot(myRoutes),
+
   ],
   providers: [AuthService, SearchService, searchUrlService, ProfileService, VideoSearchService, UserSearchService],
   bootstrap: [AppComponent]
