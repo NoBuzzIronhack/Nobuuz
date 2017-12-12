@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PublicProfileService } from '../services/public-profile.service'
 import { DomSanitizer } from '@angular/platform-browser';
 import {AuthService} from '../services/auth.service'
-
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-public-profile',
@@ -10,7 +10,7 @@ import {AuthService} from '../services/auth.service'
   styleUrls: ['./public-profile.component.css']
 })
 export class PublicProfileComponent implements OnInit {
-  constructor(public publicProfileService: PublicProfileService, public sanitizer: DomSanitizer, public AuthService: AuthService) { }
+  constructor(public publicProfileService: PublicProfileService, public sanitizer: DomSanitizer, public AuthService: AuthService, public route: ActivatedRoute, private router: Router) { }
   publicPublications;
   publicUser;
   ngOnInit() {
@@ -38,8 +38,7 @@ export class PublicProfileComponent implements OnInit {
     console.log(oneUsername)
       this.publicProfileService.follow(this.publicUser._id, this.AuthService.user)
       .subscribe(response => {
-        console.log(response)
+        // this.router.navigate(['/following'])
   });
-
 }
 }

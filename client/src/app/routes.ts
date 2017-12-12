@@ -7,6 +7,7 @@ import {VideoDetailComponent} from './video-detail/video-detail.component'
 import { SearchUrlComponent } from './search-url/search-url.component'
 import {UserSearchComponent} from './user-search/user-search.component';
 import {PublicProfileComponent} from './public-profile/public-profile.component';
+import {FollowingComponent} from './following/following.component';
 
 
 
@@ -19,7 +20,8 @@ const myRoutes: Routes =[
 {path: 'profile', component: ProfileComponent},
 {path: 'url-search', component: SearchUrlComponent },
 {path: 'user-search', component: UserSearchComponent },
-{path: 'public-profile/:id', component: PublicProfileComponent}
+{path: 'public-profile/:id', component: PublicProfileComponent},
+{path: 'following', component: FollowingComponent}
 // {path: '**', component: CategoryComponent }
 
 ];

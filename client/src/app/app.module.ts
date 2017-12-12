@@ -22,6 +22,7 @@ import { UserSearchComponent } from './user-search/user-search.component';
 import {UserSearchService} from './services/user-search.service';
 import { PublicProfileComponent } from './public-profile/public-profile.component';
 import {PublicProfileService} from './services/public-profile.service';
+import { FollowingComponent } from './following/following.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {PublicProfileService} from './services/public-profile.service';
     SearchUrlComponent,
     MenuComponent,
     UserSearchComponent,
-    PublicProfileComponent
+    PublicProfileComponent,
+    FollowingComponent
     ],
   imports: [
     BrowserModule,
