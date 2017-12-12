@@ -1,8 +1,25 @@
-<h1>Pick your category!</h1>
+<!--
 <div class="row">
       <div class="col s12"><a [routerLink]="['/book-search']">Books</a>
 </div>
       <div class="col s12"><a [routerLink]="['/video-search']">Videos</a></div>
       <div class="col s12"><a [routerLink]="['/url-search']">articles</a></div>
+</div>
+<router-outlet></router-outlet> -->
+
+
+<div class="row ">
+  <div class="col s12 container">
+  <img  class="responsive-img" src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=1650&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="">
+    <a class="centered" [routerLink]="['/book-search']">Books</a>
+    </div>
+    <div class="col s12 container">
+  <img class="responsive-img" src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=1650&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="">
+  <a class="centered" [routerLink]="['/video-search']">Videos</a>
+    </div>
+  <div class="col s12 container">
+    <img class="responsive-img" src="https://fbookmedia.files.wordpress.com/2015/10/instant-articles-e28094-hero1.jpg" alt="">
+    <a class="centered" [routerLink]="['/url-search']">articles</a>
+  </div>
 </div>
 <router-outlet></router-outlet>
