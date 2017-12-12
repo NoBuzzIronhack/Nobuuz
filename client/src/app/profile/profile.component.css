@@ -1,4 +1,61 @@
 img {
-  width: 300px;
+  width: 100%;
   height: auto;
+}
+
+nav {
+  background-color: #16452F !important;
+}
+
+h1{
+  font-size: 23;
+  text-align: center;
+}
+.articles {
+background-color: #F7EF00;
+}
+
+.text-card {
+  font-size: 2vw;
+}
+
+.comments-title {
+  font-size: 3.5vw;
+}
+
+.card-title {
+
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin:1%;
+}
+
+.card-image {
+  background: white;
+  max-height: 30%;
+  width: 100%;
+}
+
+.card-content{
+  padding:0;
+}
+
+
+.container{
+ /*margin: 0px;*/
+ /*padding: 0px;*/
+ display: flex;
+ flex-flow: column wrap;
+ justify-content: flex-start;
+ align-items: flex-start;
+}
+
+.columns{
+  margin: 1%;
+  padding: 10px;
 }

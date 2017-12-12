@@ -10,6 +10,8 @@ import {PublicProfileComponent} from './public-profile/public-profile.component'
 import {FollowingComponent} from './following/following.component';
 import {PortadaComponent} from './portada/portada.component';
 import {LoginFormComponent} from './login-form/login-form.component';
+import {NewsfeedComponent} from './newsfeed/newsfeed.component';
+
 
 const myRoutes: Routes =[
 {path: 'login', component: LoginFormComponent},
@@ -23,8 +25,8 @@ const myRoutes: Routes =[
 {path: 'user-search', component: UserSearchComponent },
 {path: 'public-profile/:id', component: PublicProfileComponent},
 {path: 'following', component: FollowingComponent},
-// {path: '**', component: CategoryComponent }
-{path: '', component: PortadaComponent }
+{path: 'newsfeed', component: NewsfeedComponent},
+{path: '**', component: NewsfeedComponent }
 
 ];
 

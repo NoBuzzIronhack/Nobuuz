@@ -20,6 +20,7 @@ import { ProfileService } from './services/profile.service';
 import { MenuComponent } from './menu/menu.component';
 import { UserSearchComponent } from './user-search/user-search.component';
 import {UserSearchService} from './services/user-search.service';
+import {NewsfeedService} from './services/newsfeed.service';
 import { MaterializeModule } from 'angular2-materialize';
 import {PublicProfileComponent} from './public-profile/public-profile.component'
 import { FollowingComponent } from './following/following.component';
@@ -30,6 +31,10 @@ import { PortadaComponent } from './portada/portada.component';
 
 
 import 'materialize-css';
+import { NewsfeedComponent } from './newsfeed/newsfeed.component';
+import { ProfileBooksComponent } from './profile-books/profile-books.component';
+import { ProfileVideosComponent } from './profile-videos/profile-videos.component';
+import { ProfileArticlesComponent } from './profile-articles/profile-articles.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +50,11 @@ import 'materialize-css';
     UserSearchComponent,
     PublicProfileComponent,
     FollowingComponent,
-    PortadaComponent
+    PortadaComponent,
+    NewsfeedComponent,
+    ProfileBooksComponent,
+    ProfileVideosComponent,
+    ProfileArticlesComponent
     ],
   imports: [
     BrowserModule,
@@ -55,7 +64,7 @@ import 'materialize-css';
 
   ],
   providers: [AuthService, SearchService, searchUrlService, ProfileService,
-    VideoSearchService, UserSearchService, PublicProfileService],
+    VideoSearchService, UserSearchService, PublicProfileService, NewsfeedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

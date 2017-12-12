@@ -22,15 +22,5 @@ router.post('/public-profile/:id', (req, res, next) => {
   })
 })
 
-router.get('/dashboard', (req, res, next) => {
-  let user = req.user;
-  Relational.find({ creator: { $in: user.following } })
-  .populate('publication')
-  exec((err, relation) => {
-    res.status(200).json(relation)
-  })
-})
-
-
 
 module.exports = router;
