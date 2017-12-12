@@ -12,17 +12,26 @@
       <button type="button" (click)='saveTheVideoPublication(video, comments)'>Add to my profile</button>
   </div>
   </div>
-
 </div>
-<div *ngIf='routeToShow == "book-search"'>
-  <h1>Pick your Book!</h1>
-  <input (keyup)='searchBooks($event)' placeholder="pick a book">
-  <div class="" *ngIf = "bookList">
-  <div *ngFor = "let book of bookList">
-  <a [routerLink]='["/book-detail/",book.link]' >
-    <p>{{book.title}}</p>
-    <p>by {{book.author}}</p>
-  </a>
-  </div>
+
+
+
+<div class= "container" *ngIf='routeToShow == "book-search"'>
+      <input (keyup)='searchBooks($event)' placeholder="search book">
+        <div class="" *ngIf = "bookList">
+          <div *ngFor = "let book of bookList">
+            <div class="col s12 m7">
+            <div class="card horizontal">
+            <div class="card-stacked">
+              <div class= "card-content">
+            <a [routerLink]='["/book-detail/",book.link]' >
+              <p class ="title">{{book.title}}</p>
+              <p>by {{book.author}}</p>
+            </a>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

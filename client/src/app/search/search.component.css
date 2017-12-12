@@ -1,0 +1,28 @@
+input {
+  color:white;
+  padding-left: 10px;
+}
+
+.background-color {
+  border-color: red ;
+}
+
+.card-content {
+  border-width: 5px;
+  border-color: red !important;
+  padding: 6px;
+}
+
+.card.horizontal {
+margin-bottom: 0px;
+margin-left: 0px;
+
+}
+
+.title {
+  font-size: 18px;
+}
+
+.card:hover {
+    border-bottom: 2px solid red;
+}
