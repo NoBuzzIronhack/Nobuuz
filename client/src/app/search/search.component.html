@@ -4,7 +4,7 @@
   <div class="" *ngIf = "videoList.length>0">
   <div *ngFor = "let video of videoList">
     <p>{{video.title}}</p>
-    <p>{{video.embeded}}</p>
+    <!-- <p>{{video.embeded}}</p> -->
     <iframe width="560" height="315" [src]="video.embeded" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen *ngIf= "video.embeded"></iframe>
     <br>
     <h3>Tell us something!</h3>

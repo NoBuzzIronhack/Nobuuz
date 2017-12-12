@@ -1,7 +1,7 @@
 
-<h1>Public Publications</h1>
-<br>
+<!--
 <div class="publications" *ngIf="publicUser && loggedUser">
+
 <ul>
   <li *ngFor = "let publication of publicPublications" class = "">
   {{publication.publication.title}}
@@ -17,4 +17,33 @@
     <button (click)='followUser(oneUsername)'type="button" name="button" *ngIf="loggedUser.following.indexOf(publicUser._id) !== -1">stop following</button>
 </li>
 </ul>
-</div>
+</div> -->
+
+<h1>{{loggedUser.username}}</h1>
+<button (click)='followUser(oneUsername)'type="button" name="button" *ngIf="loggedUser.following.indexOf(publicUser._id) == -1">follow</button>
+<button (click)='followUser(oneUsername)'type="button" name="button" *ngIf="loggedUser.following.indexOf(publicUser._id) !== -1">stop following</button>
+
+<div class="publications" *ngIf="publicUser && loggedUser">
+<div *ngFor = "let publication of publicPublications">
+<div class="row">
+        <div class="col s6 m7">
+          <div class="card">
+            <div class="card-image">
+        <div *ngIf='publication.publication.new == "youtube"'>
+        <iframe width="100%" height="auto" [src]="publication.publication.link" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen *ngIf= "publication.publication.link"></iframe>
+          </div>
+          <img src="{{publication.publication.image}}">
+          </div>
+            <div class="card-content">
+              <span class="card-title">{{publication.publication.title}}</span>
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+              <a href="publication.publication.link">Go to Website</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
