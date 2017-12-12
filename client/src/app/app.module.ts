@@ -24,6 +24,8 @@ import { MaterializeModule } from 'angular2-materialize';
 import {PublicProfileComponent} from './public-profile/public-profile.component'
 import { FollowingComponent } from './following/following.component';
 import {PublicProfileService} from './services/public-profile.service';
+import 'materialize-css';
+import { PortadaComponent } from './portada/portada.component';
 
 
 
@@ -42,7 +44,8 @@ import 'materialize-css';
     MenuComponent,
     UserSearchComponent,
     PublicProfileComponent,
-    FollowingComponent
+    FollowingComponent,
+    PortadaComponent
     ],
   imports: [
     BrowserModule,

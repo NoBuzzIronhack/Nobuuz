@@ -8,10 +8,11 @@ import { SearchUrlComponent } from './search-url/search-url.component'
 import {UserSearchComponent} from './user-search/user-search.component';
 import {PublicProfileComponent} from './public-profile/public-profile.component';
 import {FollowingComponent} from './following/following.component';
-
-
+import {PortadaComponent} from './portada/portada.component';
+import {LoginFormComponent} from './login-form/login-form.component';
 
 const myRoutes: Routes =[
+{path: 'login', component: LoginFormComponent},
 {path: 'categories', component: CategoryComponent},
 {path: 'book-search', component: SearchComponent},
 {path: 'book-detail/:url', component: BookDetailComponent},
@@ -21,8 +22,9 @@ const myRoutes: Routes =[
 {path: 'url-search', component: SearchUrlComponent },
 {path: 'user-search', component: UserSearchComponent },
 {path: 'public-profile/:id', component: PublicProfileComponent},
-{path: 'following', component: FollowingComponent}
+{path: 'following', component: FollowingComponent},
 // {path: '**', component: CategoryComponent }
+{path: '', component: PortadaComponent }
 
 ];
 

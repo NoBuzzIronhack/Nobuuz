@@ -1,8 +1,8 @@
 <h1>Pick your category!</h1>
-<a [routerLink]="['/book-search']">Books</a>
-<br>
-<a [routerLink]="['/video-search']">Videos</a>
-<br>
-<a [routerLink]="['/url-search']">articles</a>
-
+<div class="row">
+      <div class="col s12"><a [routerLink]="['/book-search']">Books</a>
+</div>
+      <div class="col s12"><a [routerLink]="['/video-search']">Videos</a></div>
+      <div class="col s12"><a [routerLink]="['/url-search']">articles</a></div>
+</div>
 <router-outlet></router-outlet>
