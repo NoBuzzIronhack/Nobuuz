@@ -3,41 +3,47 @@ img {
 }
 
 .container{
- margin: 0;
+ margin: 0 auto;
  display: flex;
- flex-direction: row;
- flex-wrap: wrap;
-
- /*flex-flow: column wrap; /* Shorthand – you could use ‘flex-direction: column’ and ‘flex-wrap: wrap’ instead */
- /*justify-content: flex-start;
- align-items: stretch;*/
-}
-
-.col .s6 {
-  margin-left: 2px;
-  margin-right: 2px;
-}
-
- .columns img {
-  width: 100%;
-}
-
-iframe {
-  width: 100%;
+ flex-flow: column wrap; /* Shorthand – you could use ‘flex-direction: column’ and ‘flex-wrap: wrap’ instead */
+ justify-content: flex-start;
+ align-items: flex-start;
 }
 
 .columns{
-  background-color: white;
-  width: 45%;
-  height: auto;
-  flex-basis: auto;
-  display: flex;
-}
-
-.columns span {
-  width: inherit;
+  margin: 1%;
+  padding: 10px;
 }
 
 .books .card{
   background-color: #F7EF00;
+}
+
+.row .col {
+  padding: 4px !important;
+}
+
+.row .col .s6 {
+  margin: 0px !important;
+}
+
+span {
+  font-size: 15px !important;
+  line-height: 20px !important;
+}
+
+span h4 {
+  font-size: 14px !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+}
+
+span h2 {
+  font-size: 25px !important;
+  font-family: 'Old Standard TT', serif
+}
+.container .row {
+  margin-left: -1.75rem;
+  margin-right: -1.75rem;
 }
