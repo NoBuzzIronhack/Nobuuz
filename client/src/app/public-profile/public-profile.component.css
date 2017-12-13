@@ -3,16 +3,39 @@ img {
 }
 
 .container{
- margin: 0 auto;
+ margin: 0;
  display: flex;
- flex-flow: column wrap; /* Shorthand – you could use ‘flex-direction: column’ and ‘flex-wrap: wrap’ instead */
- justify-content: flex-start;
- align-items: flex-start;
+ flex-direction: row;
+ flex-wrap: wrap;
+
+ /*flex-flow: column wrap; /* Shorthand – you could use ‘flex-direction: column’ and ‘flex-wrap: wrap’ instead */
+ /*justify-content: flex-start;
+ align-items: stretch;*/
+}
+
+.col .s6 {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+ .columns img {
+  width: 100%;
+}
+
+iframe {
+  width: 100%;
 }
 
 .columns{
-  margin: 1%;
-  padding: 10px;
+  background-color: white;
+  width: 45%;
+  height: auto;
+  flex-basis: auto;
+  display: flex;
+}
+
+.columns span {
+  width: inherit;
 }
 
 .books .card{

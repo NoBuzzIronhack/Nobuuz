@@ -6,18 +6,6 @@ img {
   width: 100%;
   height: auto;
 }
-/*.gradient-image {
-  width: 100%;
-  height: auto;
-}*/
-
-/*.gradient-image::after {
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #fff 100%);
-  margin-top: -150px;
-  height: 80px;
-  width: 100%;
-  content: '';
-}*/
 
 .gradient-image::after {
   display: block;
@@ -40,7 +28,7 @@ h1{
   position: absolute;
   top: 32%;
   left: 42%;
-color: black;
+color: #e4e0daff;
 text-transform: uppercase;
 }
 
