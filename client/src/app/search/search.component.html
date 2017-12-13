@@ -7,11 +7,12 @@
     <div class="card horizontal">
     <div class="card-stacked">
       <div class= "card-content">
-    <p class="title">{{video.title}}</p>
     <div class="video-container">
       <iframe width="560" height="315" [src]="video.embeded" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen *ngIf= "video.embeded"></iframe>
     </div>
     <br>
+      <p class="title">{{video.title}}</p>
+      <br>
     <input type='text' placeholder="Comment something" [(ngModel)]="comments">
     <!-- <div class="card-action"> -->
       <button class="waves-effect waves-light btn" type="button" (click)='saveTheVideoPublication(video, comments)'>Add to my profile</button>
@@ -23,6 +24,7 @@
 </div>
 </div>
 </div>
+<app-menu></app-menu>
 </div>
 
 
@@ -49,6 +51,5 @@
     </div>
   </div>
 </div>
-</div>
-
 <app-menu></app-menu>
+</div>
