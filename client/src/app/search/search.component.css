@@ -31,10 +31,11 @@ margin-left: 0px;
 
 .title {
   font-size: 18px;
+  font-family: ‘Didact Gothic’, sans-serif;
 }
 
 .card:hover {
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid #F8F4EE;
 }
 
 .video-container {
@@ -49,22 +50,26 @@ margin-left: 0px;
   height: 100%;
   width: 100%;
   position: absolute;
-  background-color: red;
+  background-color: #F8F4EE;
   padding: 50px 20px;
-
 }
 
-
+.waves-effect {
+  background-color:  white;
+}
 
 .btn {
   /*background-color: #FF3F6C;*/
   opacity: .90;
-  background-color: #5A9F7B
-
+  background-color: #FF005D;
+  border-radius: 25px;
+  margin-bottom: 10px;
+  z-index: 5;
 }
 
 
 a {
   text-decoration: none;
-    color: #5A9F7B;
+    color: black;
+    font-family: ‘Didact Gothic’, sans-serif;
 }

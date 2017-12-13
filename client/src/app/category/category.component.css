@@ -4,6 +4,12 @@
     text-align: center;
 }*/
 
+img.responsive-img{
+}
+.category-componen{
+    max-height: 50vh;
+    box-sizing: border-box;
+}
 .row {
   color: white;
 }
