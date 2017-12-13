@@ -116,7 +116,6 @@ router.get('/video/youtube', (req, res, render) => {
       return {
         title: video.title,
         link: video.link,
-        image: video.thumbnails.default.url,
         createdAt: video.publishedAt
       }
     })
@@ -128,7 +127,6 @@ router.post('/video/youtube/detail', (req, res, render) => {
 
   const newPublication = new Publication({
     title: req.body[0].title,
-    image: req.body[0].image,
     link: req.body[0].link,
     createdAt: req.body[0].publishedAt,
     category: "Video"

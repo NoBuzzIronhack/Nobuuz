@@ -1,67 +1,145 @@
 
+
+
+
 <h1>My Publications</h1>
-<br>
 <div class="publications">
-<ul>
-  <li *ngFor = "let publication of myPublications" class = "">
-<<<<<<< HEAD
-
-  <p>ARTICLES</p>
-  <div *ngIf='publication.publication.category == "Publication"'>
-  <p>{{publication.publication.title}}</p>
-  <p>{{publication.publication.author}}</p>
-  <img [src]="publication.publication.image">
-  <h3>Comments</h3>
-  <p>{{publication.comments}}</p>
-  <a href="{{publication.publication.link}}" target="_blank">See on Website</a>
-</div>
-
-<p>YOUTUBE VIDEO</p>
-<div *ngIf='publication.publication.category == "Video"'>
-<p>{{publication.publication.title}}</p>
-<p>{{publication.publication.author}}</p>
-<div *ngIf='publication.publication.new == "youtube"'>
-  <iframe width="560" height="315" [src]="publication.publication.link" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen *ngIf= "publication.publication.link"></iframe>
-</div>
-<h3>Comments</h3>
-<p>{{publication.comments}}</p>
-<a href="{{publication.publication.link}}" target="_blank">See on Website</a>
-</div>
-
-<p>BOOKS</p>
-<div *ngIf='publication.publication.category == "Book"'>
-<p>{{publication.publication.title}}</p>
-<p>{{publication.publication.author}}</p>
-<img [src]="publication.publication.image">
-<h3>Comments</h3>
-<p>{{publication.comments}}</p>
-<a href="{{publication.publication.link}}" target="_blank">See on Website</a>
-</div>
-
-<!-- <h2>Articles</h2>
-<h1>{{publication.publication.title}}</h1>
-<p>{{publication.publication.author}}</p>
-  <p>{{publication.publication.createdAt}}</p>
+  <nav class="nav-extended">
+    <div class="nav-wrapper">
+      <div class="nav-content">
+            <ul class="tabs tabs-transparent">
+              <li class="tab"><a href="#">All</a></li>
+              <li class="tab"><a href="#">Videos</a></li>
+              <li class="tab"><a href="#"></a>Articles</li>
+              <li class="tab"><a href="#">Books</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div *ngFor="let publication of myPublications" class="">
 
 
 
-    <a href="{{publication.publication.link}}" target="_blank">See on Website</a>
-    <img [src]="publication.publication.image"> -->
-=======
-  {{publication.publication.title}}
-  <img src="{{publication.publication.image}}" alt="">
-  <br>
-    <br>
-    <div *ngIf='publication.publication.new == "youtube"'>
-      <iframe width="560" height="315" [src]="publication.publication.link" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen *ngIf= "publication.publication.link"></iframe>
-    </div>
-    <p>{{publication.publication.link}}</p>
+      <div class="container">
+        <div class="row">
+              <!-- <div *ngIf='publication.publication.category == "Publication"'> -->
+                  <div class="col s12 m6">
+                    <div class="card">
+                      <div class="card-image">
+                    <img src="{{publication.publication.image}}">
+                    </div>
+                      <div class="card-content">
+                        <span class="card-title">{{publication.publication.title}}
+                        <p>{{publication.publication.author}}</p>
+                        <p>{{publication.publication.publisher}}</p>
+                        <p class = "comments-title">Comments</p>
+                        <p>{{publication.comments}}</p>
+                        </span>
+                      </div>
+                      <div class="card-action">
+                        <a href="{{publication.publication.link}}" target="_blank">See on Website</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- </div> -->
+<!--
+            <div class="container">
+              <div class="row">
+                    <div *ngIf='publication.publication.category == "Video"'>
+                        <div class="col s6">
+                          <div class="card">
+                            <div class="card-image">
+                              <div *ngIf='publication.publication.new == "youtube"'>
+                                <iframe width="100%" height="315" [src]="publication.publication.link" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen *ngIf="publication.publication.link"></iframe>
+                              </div>
+                          </div>
+                            <div class="card-content">
+                              <span class="card-title">{{publication.publication.title}}
+                              <p>{{publication.publication.author}}</p>
+                              <p class = "comments-title">Comments</p>
+                              <p>{{publication.comments}}</p>
+                              </span>
+                            </div>
+                            <div class="card-action">
+                              <a href="{{publication.publication.link}}" target="_blank">See on Website</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
 
-  <br>
+                  <div class="container">
+                    <div class="row">
+                          <div *ngIf='publication.publication.category == "Book"'>
+                              <div class="col s6">
+                                <div class="card">
+                                  <div class="card-image">
+                                <img src="{{publication.publication.image}}">
+                                </div>
+                                  <div class="card-content">
+                                    <span class="card-title">
+                                      {{publication.publication.title}}
+                                    <div class="text-card">
+                                    <p>{{publication.publication.rating}}</p>
+                                    <p class = "comments-title">Comments</p>
+                                    <p>{{publication.comments}}</p>
+                                  </div>
+                                    </span>
+                                  </div>
+                                  <div class="card-action">
+                                    <a href="{{publication.publication.link}}" target="_blank">See on Website</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div> -->
 
-  <br>
->>>>>>> 58f64caae622bc3efa396acb67d39badbb57325e
-</li>
-</ul>
-</div>
+          </div>
+      </div>
+      <app-menu></app-menu>
+
+
+
+
+<!--
+
+
+      <div *ngIf='publication.publication.category == "Publication"'>
+        <div class="articles">
+          <p>{{publication.publication.title}}</p>
+          <p>{{publication.publication.author}}</p>
+          <img [src]="publication.publication.image">
+          <h3>Comments</h3>
+          <p>{{publication.comments}}</p>
+          <a href="{{publication.publication.link}}" target="_blank">See on Website</a>
+        </div>
+      </div>
+
+      <div *ngIf='publication.publication.category == "Video"'>
+        <div class="video">
+          <p>{{publication.publication.title}}</p>
+          <p>{{publication.publication.author}}</p>
+          <div *ngIf='publication.publication.new == "youtube"'>
+            <iframe width="560" height="315" [src]="publication.publication.link" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen *ngIf="publication.publication.link"></iframe>
+          </div>
+          <h3>Comments</h3>
+          <p>{{publication.comments}}</p>
+          <a href="{{publication.publication.link}}" target="_blank">See on Website</a>
+        </div>
+      </div>
+
+      <div *ngIf='publication.publication.category == "Book"'>
+        <div class="books">
+          <p>{{publication.publication.title}}</p>
+          <p>{{publication.publication.author}}</p>
+          <img [src]="publication.publication.image">
+          <h3>Comments</h3>
+          <p>{{publication.comments}}</p>
+          <a href="{{publication.publication.link}}" target="_blank">See on Website</a>
+        </div>
+      </div> -->

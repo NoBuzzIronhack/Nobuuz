@@ -1,0 +1,33 @@
+.login-input {
+border-color: yellow;
+border-radius: 25px;
+}
+
+.login-input input {
+border-color: yellow;
+border-radius: 25px;
+}
+
+
+.login-div {
+  margin: 10%;
+  text-align: center;
+}
+
+.login-div label {
+  text-align: left;
+}
+
+button {
+border-radius:25px;
+border-style: none;
+background-color: #FF3F6C;
+width: 30%;
+padding: 7px;
+color: white;
+text-decoration: none;
+}
+
+button: hover {
+  border-color:#4CAF50!important
+}
