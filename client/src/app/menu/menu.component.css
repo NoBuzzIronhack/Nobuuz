@@ -7,7 +7,7 @@
   display: inline-block;
   background-color: #e4e0daff;
   width: 100%;
-  height: 8%;
+  height: 8vh;
   /*height: 60px;*/
 }
 
@@ -20,23 +20,24 @@ li {
 i {
   font-size: 30px;
   text-decoration: none;
-color:  #FF005D;
+  color: black;
 }
 
 .barra{
   z-index: 5;
   width: 100%;
-  height: 50px;
+  height: 8vh;
   background-color: #e4e0daff;
   position: fixed;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   font-family: 'Didact Gothic', sans-serif;
   letter-spacing: 4px;
   font-weight: bolder;
+  box-sizing: border-box;
 top: 0px;
 left: 0px;
 right:0px;
-color: #FF005D;
+color: black;
 font-size: 1.1em;
 text-align: center;
 }

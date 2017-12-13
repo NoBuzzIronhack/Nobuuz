@@ -1,14 +1,13 @@
 
-/*.row .col {
-    padding: 6rem;
-    text-align: center;
-}*/
-
 img.responsive-img{
+  width: 100;
 }
 .category-componen{
     max-height: 50vh;
     box-sizing: border-box;
+    max-width: 100%;
+    padding: 0px;
+    margin: 0px;
 }
 .row {
   color: white;
@@ -27,8 +26,39 @@ img.responsive-img{
     transform: translate(-50%, -50%);
     color:white;
     font-size: 5em;
+
 }
 
-img {
-  opacity: 0.8;
+.row .col.s12.category-item {
+  height: 28vh;
+}
+
+
+.category-items-wrapper {
+  padding-top: 8vh;
+}
+
+.img1{
+  background-image: url("https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=1650&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D");
+  background-size: cover;
+  max-width: 100%;
+  max-height: auto;
+  filter: grayscale(50%);
+
+}
+
+.img2{
+  background-image: url("https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&w=1650&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D");
+  background-size: cover;
+  max-width: 100%;
+  max-height: auto;
+  filter: grayscale(30%);
+}
+
+.img3{
+  background-image: url("https://fbookmedia.files.wordpress.com/2015/10/instant-articles-e28094-hero1.jpg");
+  background-size: cover;
+  max-width: 100%;
+  max-height: auto;
+  filter: grayscale(55%);
 }
