@@ -1,12 +1,31 @@
-<div *ngIf="loggedUser">
+<!-- <div *ngIf="loggedUser">
   <h1>{{loggedUser.username}}</h1>
   <img src="https://s5.favim.com/610/151118/guy-indie-man-photography-Favim.com-3588965.jpg" alt="">
-  <button (click)='followUser(oneUsername)'type="button" name="button" *ngIf="loggedUser.following.indexOf(publicUser._id) == -1">follow</button>
-  <button (click)='followUser(oneUsername)'type="button" name="button" *ngIf="loggedUser.following.indexOf(publicUser._id) !== -1">stop following</button>
+  <button (click)='followUser(oneUsername)' type="button" name="button" *ngIf="loggedUser.following.indexOf(publicUser._id) == -1">follow</button>
+  <button (click)='followUser(oneUsername)' type="button" name="button" *ngIf="loggedUser.following.indexOf(publicUser._id) !== -1">stop following</button>
+</div> -->
+
+
+<div *ngIf="loggedUser" class="publications">
+    <div class = "gradient-image">
+      <img src="https://s5.favim.com/610/151118/guy-indie-man-photography-Favim.com-3588965.jpg" class="profile-image">
+  </div>
+<div class="profile-menu">
+  <h1>{{loggedUser.username}}</h1>
+    <ul>
+      <li><a [routerLink]="['/profile']"> </a>All</li>
+    <li><a [routerLink]="['/profile-videos']"></a>Videos</li>
+      <li><a [routerLink]="['/profile-articles']"></a>Articles</li>
+      <li><a [routerLink]="['/profile-books']"></a>Books</li>
+    </ul>
+    <button (click)='followUser(oneUsername)' type="button" name="button" *ngIf="loggedUser.following.indexOf(publicUser._id) == -1">follow</button>
+    <button (click)='followUser(oneUsername)' type="button" name="button" *ngIf="loggedUser.following.indexOf(publicUser._id) !== -1">stop following</button>
+  </div>
+
 </div>
 
 
-<!-- <div *ngIf='publication.publication.category == "Publication"'> -->
+
 <div class="container">
   <div class="row">
     <div class="publications" *ngIf="publicUser && loggedUser">
@@ -20,8 +39,8 @@
               <img src="{{publication.publication.image}}">
               </div>
                 <div class="card-content">
-                  <span class="card-title">{{publication.publication.title}}
-                  <p>{{publication.publication.title}}</p>
+                  <span class="card-title">
+                  <h2>{{publication.publication.title}}</h2>
                   <h4>Comments</h4>
                   <p>{{publication.comments}}</p>
                   </span>
@@ -35,70 +54,5 @@
         </div>
       </div>
 </div>
-<!-- </div> -->
-
-<!--
-<div *ngIf='publication.publication.category == "Video"'>
-<div class="container video">
-  <div class="row">
-    <div class="publications" *ngIf="publicUser && loggedUser">
-    <div *ngFor = "let publication of publicPublications">
-            <div class="col s6">
-              <div class="card">
-                <div class="card-image">
-            <div *ngIf='publication.publication.new == "youtube"'>
-            <iframe width="100%" height="60%" [src]="publication.publication.link" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen *ngIf= "publication.publication.link"></iframe>
-              </div>
-              <img src="{{publication.publication.image}}">
-              </div>
-                <div class="card-content">
-                  <span class="card-title">{{publication.publication.title}}
-                  <p>{{publication.publication.title}}</p>
-                  <h4>Comments</h4>
-                  <p>{{publication.comments}}</p>
-                  </span>
-                </div>
-                <div class="card-action">
-                  <a href="publication.publication.link">Go to Website</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-</div>
-</div>
-
-
-<div *ngIf='publication.publication.category == "Books"'>
-<div class="container books">
-  <div class="row">
-    <div class="publications" *ngIf="publicUser && loggedUser">
-    <div *ngFor = "let publication of publicPublications">
-            <div class="col s6">
-              <div class="card">
-                <div class="card-image">
-            <div *ngIf='publication.publication.new == "youtube"'>
-            <iframe width="100%" height="60%" [src]="publication.publication.link" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen *ngIf= "publication.publication.link"></iframe>
-              </div>
-              <img src="{{publication.publication.image}}">
-              </div>
-                <div class="card-content">
-                  <span class="card-title">{{publication.publication.title}}
-                  <p>{{publication.publication.title}}</p>
-                  <h4>Comments</h4>
-                  <p>{{publication.comments}}</p>
-                  </span>
-                </div>
-                <div class="card-action">
-                  <a href="publication.publication.link">Go to Website</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-</div>
-</div> -->
 
 <app-menu></app-menu>
