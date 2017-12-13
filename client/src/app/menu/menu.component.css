@@ -4,8 +4,8 @@
   right:0px;
   bottom: 0px;
   display: inline-block;
-  background-color: #FFC941;
-  color: black;
+  background-color: #e4e0daff;
+
   width: 100%;
   height: 8%;
   /*height: 60px;*/
@@ -20,23 +20,26 @@ li {
 i {
   font-size: 30px;
   text-decoration: none;
-  color: black;
-
+color:  #FF005D;
 }
 
 .barra{
   width: 100%;
-  height: 40px;
-  background-color: #FFC941;
+  height: 50px;
+  background-color: #e4e0daff;
   position: fixed;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-family: 'Didact Gothic', sans-serif;
+  letter-spacing: 4px;
+  font-weight: bolder;
 top: 0px;
 left: 0px;
 right:0px;
-color: black;
+color: #FF005D;
 font-size: 1.1em;
 text-align: center;
 }
 .barra h1 {
-  font-size: 1.1em;
-  margin-top: 6%;
+  font-size: 2em;
+  margin-top: 3%;
 }
