@@ -1,6 +1,8 @@
-<h1>{{loggedUser.username}}</h1>
-<button (click)='followUser(oneUsername)'type="button" name="button" *ngIf="loggedUser.following.indexOf(publicUser._id) == -1">follow</button>
-<button (click)='followUser(oneUsername)'type="button" name="button" *ngIf="loggedUser.following.indexOf(publicUser._id) !== -1">stop following</button>
+<div *ngIf="loggedUser">
+  <h1>{{loggedUser.username}}</h1>
+  <button (click)='followUser(oneUsername)'type="button" name="button" *ngIf="loggedUser.following.indexOf(publicUser._id) == -1">follow</button>
+  <button (click)='followUser(oneUsername)'type="button" name="button" *ngIf="loggedUser.following.indexOf(publicUser._id) !== -1">stop following</button>
+</div>
 
 
 <!-- <div *ngIf='publication.publication.category == "Publication"'> -->

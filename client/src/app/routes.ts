@@ -26,7 +26,7 @@ const myRoutes: Routes =[
 {path: 'public-profile/:id', component: PublicProfileComponent},
 {path: 'following', component: FollowingComponent},
 {path: 'newsfeed', component: NewsfeedComponent},
-{path: '**', component: NewsfeedComponent }
+// {path: '**', component: NewsfeedComponent }
 
 ];
 

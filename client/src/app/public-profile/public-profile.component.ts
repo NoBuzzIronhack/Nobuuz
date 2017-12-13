@@ -3,6 +3,8 @@ import { PublicProfileService } from '../services/public-profile.service'
 import { DomSanitizer } from '@angular/platform-browser';
 import {AuthService} from '../services/auth.service'
 import {ActivatedRoute, Router} from '@angular/router';
+declare var $:any;
+
 
 @Component({
   selector: 'app-public-profile',
@@ -38,9 +40,12 @@ export class PublicProfileComponent implements OnInit {
 
 
   followUser(oneUsername){
-      this.publicProfileService.follow(this.publicUser._id, this.AuthService.user)
+      this.publicProfileService.follow(this.publicUser._id, this.loggedUser)
       .subscribe(response => {
         // this.router.navigate(['/following'])
   });
+
+
 }
+
 }
