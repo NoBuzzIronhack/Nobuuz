@@ -1,27 +1,17 @@
-<!-- <div *ngIf="loggedUser">
-  <h1>{{loggedUser.username}}</h1>
-  <img src="https://s5.favim.com/610/151118/guy-indie-man-photography-Favim.com-3588965.jpg" alt="">
-  <button (click)='followUser(oneUsername)' type="button" name="button" *ngIf="loggedUser.following.indexOf(publicUser._id) == -1">follow</button>
-  <button (click)='followUser(oneUsername)' type="button" name="button" *ngIf="loggedUser.following.indexOf(publicUser._id) !== -1">stop following</button>
-</div> -->
-
-
-<div *ngIf="loggedUser" class="publications">
-    <div class = "gradient-image">
-      <img src="https://s5.favim.com/610/151118/guy-indie-man-photography-Favim.com-3588965.jpg" class="profile-image">
-  </div>
+<div *ngIf="loggedUser">
+<div class = "gradient-image">
+  <img src="https://s5.favim.com/610/151118/guy-indie-man-photography-Favim.com-3588965.jpg" alt="" class = "profile-image">
 <div class="profile-menu">
   <h1>{{loggedUser.username}}</h1>
-    <ul>
-      <li><a [routerLink]="['/profile']"> </a>All</li>
-    <li><a [routerLink]="['/profile-videos']"></a>Videos</li>
-      <li><a [routerLink]="['/profile-articles']"></a>Articles</li>
-      <li><a [routerLink]="['/profile-books']"></a>Books</li>
-    </ul>
-    <button (click)='followUser(oneUsername)' type="button" name="button" *ngIf="loggedUser.following.indexOf(publicUser._id) == -1">follow</button>
-    <button (click)='followUser(oneUsername)' type="button" name="button" *ngIf="loggedUser.following.indexOf(publicUser._id) !== -1">stop following</button>
-  </div>
+<ul>
+  <li><a [routerLink]="['/profile']"> </a>All</li>
+<li><a [routerLink]="['/profile-videos']"></a>Videos</li>
+  <li><a [routerLink]="['/profile-articles']"></a>Articles</li>
+  <li><a [routerLink]="['/profile-books']"></a>Books</li>
+</ul>
 
+  <button (click)='followUser(oneUsername)' type="button" name="button" *ngIf="loggedUser.following.indexOf(publicUser._id) == -1">follow</button>
+  <button (click)='followUser(oneUsername)' type="button" name="button" *ngIf="loggedUser.following.indexOf(publicUser._id) !== -1">stop following</button>
 </div>
 
 
