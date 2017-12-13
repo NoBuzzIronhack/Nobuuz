@@ -1,5 +1,6 @@
 <div *ngIf="loggedUser">
   <h1>{{loggedUser.username}}</h1>
+  <img src="https://s5.favim.com/610/151118/guy-indie-man-photography-Favim.com-3588965.jpg" alt="">
   <button (click)='followUser(oneUsername)'type="button" name="button" *ngIf="loggedUser.following.indexOf(publicUser._id) == -1">follow</button>
   <button (click)='followUser(oneUsername)'type="button" name="button" *ngIf="loggedUser.following.indexOf(publicUser._id) !== -1">stop following</button>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from '../services/auth.service'
 
 @Component({
   selector: 'app-newsfeed',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./newsfeed.component.css']
 })
 export class NewsfeedComponent implements OnInit {
-
-  constructor() { }
+loggedUser;
+  constructor(public AuthService: AuthService) { }
 
   ngOnInit() {
+  this.AuthService.isLoggedIn()
+  .subscribe( user => {
+    this.loggedUser = user;
+  })
   }
 
 }

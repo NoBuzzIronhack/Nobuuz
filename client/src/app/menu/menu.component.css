@@ -1,0 +1,42 @@
+.menu {
+  position: fixed;
+  left: 0px;
+  right:0px;
+  bottom: 0px;
+  display: inline-block;
+  background-color: #FFC941;
+  color: black;
+  width: 100%;
+  height: 8%;
+  /*height: 60px;*/
+}
+
+li {
+  position:relative;
+  display:inline;
+  margin: 8%;
+}
+
+i {
+  font-size: 30px;
+  text-decoration: none;
+  color: black;
+
+}
+
+.barra{
+  width: 100%;
+  height: 40px;
+  background-color: #FFC941;
+  position: fixed;
+top: 0px;
+left: 0px;
+right:0px;
+color: black;
+font-size: 1.1em;
+text-align: center;
+}
+.barra h1 {
+  font-size: 1.1em;
+  margin-top: 6%;
+}

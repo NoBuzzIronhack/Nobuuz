@@ -1,16 +1,71 @@
+body {
+  background-color: #F8F4EE;
+}
+
 img {
   width: 100%;
   height: auto;
 }
+/*.gradient-image {
+  width: 100%;
+  height: auto;
+}*/
+
+/*.gradient-image::after {
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #fff 100%);
+  margin-top: -150px;
+  height: 80px;
+  width: 100%;
+  content: '';
+}*/
+
+.gradient-image::after {
+  display: block;
+  position: relative;
+  background-image: linear-gradient(to bottom, transparent 0%, #F8F4EE 100%);
+  margin-top: -150px;
+  height: 150px;
+  width: 100%;
+  content: '';
+}
 
 nav {
   background-color: #16452F !important;
+
 }
 
 h1{
-  font-size: 23;
+  font-size: 2em;
+  text-align: center;
+  position: absolute;
+  top: 32%;
+  left: 42%;
+color: black;
+text-transform: uppercase;
+}
+
+.profile-menu {
+  left: 0px;
+  right:0px;
+  background-color: red;
+  color: white;
+  /*height: 4%;*/
   text-align: center;
 }
+ul {
+  padding: 5px;
+  position: relative;
+  position: absolute;
+  top:40%;
+  width: 100%;
+}
+li {
+  position:relative;
+  display:inline;
+  margin: 6%;
+color: black;
+font-size: 1.2em;}
+
 .articles {
 background-color: #F7EF00;
 }
@@ -45,6 +100,9 @@ background-color: #F7EF00;
   padding:0;
 }
 
+.user-profile-container {
+
+}
 
 .container{
  /*margin: 0px;*/

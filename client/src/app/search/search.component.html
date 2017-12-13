@@ -1,6 +1,7 @@
 <div *ngIf='routeToShow == "video-search"'>
+  <div class="search-container">
   <input (keyup)='searchVideos($event)' placeholder="Search video">
-  <div class="" *ngIf = "videoList.length>0">
+  <div *ngIf = "videoList.length>0">
   <div *ngFor = "let video of videoList">
     <div class="col s12 m7">
     <div class="card horizontal">
@@ -22,14 +23,13 @@
 </div>
 </div>
 </div>
+</div>
 
 
-
-
-
-<div class= "container" *ngIf='routeToShow == "book-search"'>
+<div *ngIf='routeToShow == "book-search"'>
+  <div class="search-container">
       <input (keyup)='searchBooks($event)' placeholder="Search book">
-        <div class="" *ngIf = "bookList">
+        <div *ngIf = "bookList">
           <div *ngFor = "let book of bookList">
             <div class="col s12 m7">
             <div class="card horizontal">
@@ -48,6 +48,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 
 <app-menu></app-menu>

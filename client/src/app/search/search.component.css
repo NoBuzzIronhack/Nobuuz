@@ -8,6 +8,10 @@ input:not([type]):focus:not([readonly]){
   box-shadow: 0 1px 0 0 transparent;
 }
 
+input {
+  margin-top: 2px;
+}
+
 .background-color {
   border-color: red ;
 }
@@ -40,6 +44,17 @@ margin-left: 0px;
 	height:0;
 	overflow:hidden;
 }
+
+.search-container{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: red;
+  padding: 50px 20px;
+
+}
+
+
 
 .btn {
   /*background-color: #FF3F6C;*/

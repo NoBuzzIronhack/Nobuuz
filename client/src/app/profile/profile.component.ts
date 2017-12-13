@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from '../services/profile.service'
 import { DomSanitizer } from '@angular/platform-browser';
+import {AuthService} from '../services/auth.service'
 
 @Component({
   selector: 'app-profile',
@@ -8,10 +9,15 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  loggedUser;
 
-  constructor(public dashboard: ProfileService, public sanitizer: DomSanitizer) { }
+  constructor(public dashboard: ProfileService, public sanitizer: DomSanitizer, public AuthService: AuthService) { }
   myPublications;
   ngOnInit() {
+    this.AuthService.isLoggedIn()
+    .subscribe( user => {
+      this.loggedUser = user;
+    });
     this.dashboard.getProfileList()
     .subscribe(publicationList => {
     this.myPublications = publicationList.map(e =>{

@@ -11,6 +11,9 @@ import {FollowingComponent} from './following/following.component';
 import {PortadaComponent} from './portada/portada.component';
 import {LoginFormComponent} from './login-form/login-form.component';
 import {NewsfeedComponent} from './newsfeed/newsfeed.component';
+import {ProfileVideosComponent} from './profile-videos/profile-videos.component';
+import {ProfileBooksComponent} from './profile-books/profile-books.component';
+import {ProfileArticlesComponent} from './profile-articles/profile-articles.component';
 
 
 const myRoutes: Routes =[
@@ -26,7 +29,11 @@ const myRoutes: Routes =[
 {path: 'public-profile/:id', component: PublicProfileComponent},
 {path: 'following', component: FollowingComponent},
 {path: 'newsfeed', component: NewsfeedComponent},
-// {path: '**', component: NewsfeedComponent }
+{path: '**', component: NewsfeedComponent },
+{path: 'profile-videos', component: ProfileVideosComponent},
+{path: 'profile-books', component: ProfileBooksComponent},
+{path: 'profile-articles', component: ProfileArticlesComponent}
+
 
 ];
 

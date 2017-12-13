@@ -19,7 +19,7 @@ export class LoginFormComponent {
 
     login(username, password){
       this.auth.login(username,password).subscribe();
-      this.router.navigate(['categories']);
+      this.router.navigate(['newsfeed']);
     }
     signup(username, password){
       console.log(username,password);
