@@ -1,5 +1,5 @@
 <div *ngIf='routeToShow == "video-search"'>
-  <input (keyup)='searchVideos($event)' placeholder="searc video">
+  <input (keyup)='searchVideos($event)' placeholder="Search video">
   <div class="" *ngIf = "videoList.length>0">
   <div *ngFor = "let video of videoList">
     <div class="col s12 m7">
@@ -11,9 +11,9 @@
       <iframe width="560" height="315" [src]="video.embeded" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen *ngIf= "video.embeded"></iframe>
     </div>
     <br>
-    <input placeholder="Comment something" [(ngModel)]="comments">
+    <input type='text' placeholder="Comment something" [(ngModel)]="comments">
     <!-- <div class="card-action"> -->
-      <button class="save-button waves-effect waves-light btn" type="button" (click)='saveTheVideoPublication(video, comments)'>Add to my profile</button>
+      <button class="waves-effect waves-light btn" type="button" (click)='saveTheVideoPublication(video, comments)'>Add to my profile</button>
     <!-- </div> -->
   </div>
   </div>
@@ -28,11 +28,14 @@
 
 
 <div class= "container" *ngIf='routeToShow == "book-search"'>
-      <input (keyup)='searchBooks($event)' placeholder="search book">
+      <input (keyup)='searchBooks($event)' placeholder="Search book">
         <div class="" *ngIf = "bookList">
           <div *ngFor = "let book of bookList">
             <div class="col s12 m7">
             <div class="card horizontal">
+              <!-- <div class="card-image"> -->
+               <!-- <img src="{{ book.image }}" alt=""> -->
+              <!-- </div> -->
             <div class="card-stacked">
               <div class= "card-content">
             <a [routerLink]='["/book-detail/",book.link]' >

@@ -1,7 +1,11 @@
-input {
+/*input {
   color:white;
   padding-left: 10px;
-  /*border-bottom: 1px solid #FF3F6C;*/
+  border-bottom: 1px solid red!important;
+}*/
+input:not([type]):focus:not([readonly]){
+  border-bottom: 1px solid transparent;
+  box-shadow: 0 1px 0 0 transparent;
 }
 
 .background-color {
@@ -38,9 +42,9 @@ margin-left: 0px;
 }
 
 .btn {
-  background-color: #FF3F6C;
+  /*background-color: #FF3F6C;*/
   opacity: .90;
-  /*background-color: #5A9F7B*/
+  background-color: #5A9F7B
 
 }
 
