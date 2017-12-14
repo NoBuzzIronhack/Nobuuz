@@ -6,9 +6,12 @@ const router = express.Router();
 
 router.get('/newsfeed', (req, res, next) => {
   let user = req.user;
+  console.log(user.following);
   Relational.find({ creator: { $in: user.following } })
   .populate('publication')
-  exec((err, relation) => {
+  .populate('creator')
+  .exec((err, relation) => {
+    console.log(relation)
     res.status(200).json(relation)
   })
 })

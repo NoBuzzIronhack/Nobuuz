@@ -144,3 +144,7 @@ padding: 0px;
 .content-other {
   margin-top: 5px;
 }
+
+.ytp-icon-large-play-button-hover {
+  background-image: url("https://www.bettervoice.com/static/images/playbutton2.png");
+}

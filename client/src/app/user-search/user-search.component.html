@@ -4,7 +4,7 @@
 
 
 <input placeholder="Search any user" [(ngModel)]="queryUsername">
-<button (click)='findOneUser()' name="button">Search</button>
+<button class="waves-effect waves-light btn" (click)='findOneUser()' name="button">Search</button>
 
 <div *ngIf="oneUsername">
      <button (click)='getUserProfile(oneUsername)'>{{oneUsername.username}}</button>
