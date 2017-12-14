@@ -2,6 +2,16 @@
 .grid-item { width: 200px; }
 
 body {
-  background-color: #F8F4EE;
+  background-color: #fcfcfcff;
+
+/*fefefeff*/
+}
+
+.card .card-action:last-child {
+  border-radius: 11px;
+}
+
+.card{
+  border-radius: 11px;
 
 }
