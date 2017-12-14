@@ -17,6 +17,14 @@ img {
   content: '';
 }
 
+.container{
+ margin-left: 20px;
+ display: flex;
+ flex-flow: column wrap; /* Shorthand – you could use ‘flex-direction: column’ and ‘flex-wrap: wrap’ instead */
+ justify-content: flex-start;
+ align-items: flex-start;
+}
+
 nav {
   background-color: #16452F !important;
 
@@ -27,15 +35,16 @@ h1{
   text-align: center;
   position: absolute;
   top: 32%;
-  left: 42%;
-color: #e4e0daff;
+  left: 38%;
+color: black;
+font-weight: bold;
+letter-spacing: 7px;
 text-transform: uppercase;
 }
 
 .profile-menu {
   left: 0px;
   right:0px;
-  background-color: red;
   color: white;
   /*height: 4%;*/
   text-align: center;
@@ -52,56 +61,86 @@ li {
   display:inline;
   margin: 6%;
 color: black;
-font-size: 1.2em;}
-
-.articles {
-background-color: #F7EF00;
-}
-
-.text-card {
-  font-size: 2vw;
-}
-
-.comments-title {
-  font-size: 3.5vw;
-}
-
-.card-title {
-
-}
-
-.card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin:1%;
-}
-
-.card-image {
-  background: white;
-  max-height: 30%;
-  width: 100%;
-}
-
-.card-content{
-  padding:0;
-}
-
-.user-profile-container {
-
-}
-
-.container{
- /*margin: 0px;*/
- /*padding: 0px;*/
- display: flex;
- flex-flow: column wrap;
- justify-content: flex-start;
- align-items: flex-start;
+font-size: 1.2em;
 }
 
 .columns{
   margin: 1%;
   padding: 10px;
+}
+
+.books .card{
+  background-color: #F7EF00;
+}
+
+.row .col {
+  padding: 4px !important;
+}
+
+.row .col .s6 {
+  margin: 0px !important;
+}
+
+span {
+  font-size: 15px !important;
+  line-height: 20px !important;
+}
+span h4 {
+  font-size: 14px !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+}
+
+span h2 {
+  font-size: 20px !important;
+  font-family: 'Old Standard TT', serif;
+  line-height: 27px;
+  margin: -11px !important;
+}
+
+/*span[_ngcontent-rhd-5] h2[_ngcontent-rhd-5] {
+  margin: -11px;
+}*/
+
+.container .row {
+  margin-left: -1.75rem;
+  margin-right: -1.75rem;
+}
+
+.card .card-content {
+  padding-top: 0px 24px 0px 24px !important;
+
+}
+
+.card .card-content p {
+text-justify: inter-word;
+padding: 0px;
+}
+
+.waves-effect {
+  background-color:  white;
+}
+
+.card .card-action {
+ color: #FF005D;
+ text-transform: uppercase;
+ display: block;
+ padding: 7px;
+ text-align: center;
+}
+
+.btn {
+  /*background-color: #FF3F6C;*/
+  opacity: .90;
+  background-color: #FF005D;
+  border-radius: 25px;
+  margin-bottom: 2px;
+  z-index: 5;
+  font-size: 10px;
+  width:60%;
+}
+
+.content-other {
+  margin-top: 5px;
 }

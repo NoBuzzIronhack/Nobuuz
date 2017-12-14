@@ -1,14 +1,19 @@
 
-<h1>Paste any URL!</h1>
+<div class="search-url">
+
+<h1>Paste any URL</h1>
 <input placeholder="paste any URL" [(ngModel)]="queryPublic">
 <button (click)='searchPubli()' name="button">Search</button>
 
 <div *ngIf="myPubli" class= "">
-  <h1>{{ myPubli.title }}</h1>
+  <h1 id="publi-title">{{ myPubli.title }}</h1>
   <img src="{{ myPubli.image }}" alt="">  <br>
   <a href="{{myPubli.link}}" target="_blank">See on {{ myPubli.author }}</a>
   <input placeholder="Comment something" [(ngModel)]="comments">
-  <button type="button" (click)='savePubli(comments)'>Add to my profile</button>
+  <button class="waves-effect waves-light btn" type="button" (click)='savePubli(comments)'>Add to my profile</button>
+
 </div>
+</div>
+
 
 <app-menu></app-menu>

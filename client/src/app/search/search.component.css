@@ -1,8 +1,5 @@
-/*input {
-  color:white;
-  padding-left: 10px;
-  border-bottom: 1px solid red!important;
-}*/
+
+
 input:not([type]):focus:not([readonly]){
   border-bottom: 1px solid transparent;
   box-shadow: 0 1px 0 0 transparent;
