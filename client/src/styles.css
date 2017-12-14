@@ -3,8 +3,8 @@
 
 body {
   background-color: #fcfcfcff;
-
-/*fefefeff*/
+  font-family: 'Roboto', sans-serif;
+  padding-bottom: 7%;
 }
 
 .card .card-action:last-child {

@@ -24,8 +24,10 @@ export class LoginFormComponent {
     signup(username, password){
       console.log(username,password);
       this.auth.signup(username,password).subscribe();
+      this.router.navigate(['newsfeed']);
     }
     logout() {
       this.auth.logout().subscribe();
+      this.router.navigate(['login']);
     }
 }

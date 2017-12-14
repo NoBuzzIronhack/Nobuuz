@@ -19,11 +19,11 @@ export class NewsfeedComponent implements OnInit {
   this.AuthService.isLoggedIn()
   .subscribe( user => {
     this.loggedUser = user;
+    console.log(this.loggedUser)
   })
 
   this.newsfeed.getNewsfeed()
   .subscribe(publications => {
-    console.log(publications)
     this.publicPublications = publications.reverse().map(e => {
       if (e.publication.link.split('.')[1]=='youtube'){
       e.publication.link = this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+e.publication.link.substr(e.publication.link.lastIndexOf('v=')+2, e.publication.link.length));

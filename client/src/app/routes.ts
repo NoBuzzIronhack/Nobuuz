@@ -29,12 +29,10 @@ const myRoutes: Routes =[
 {path: 'public-profile/:id', component: PublicProfileComponent},
 {path: 'following', component: FollowingComponent},
 {path: 'newsfeed', component: NewsfeedComponent},
-{path: '**', component: NewsfeedComponent },
 {path: 'profile-videos', component: ProfileVideosComponent},
 {path: 'profile-books', component: ProfileBooksComponent},
-{path: 'profile-articles', component: ProfileArticlesComponent}
-
-
+{path: 'profile-articles', component: ProfileArticlesComponent},
+{path: '**', component: NewsfeedComponent }
 ];
 
 export{ myRoutes };
