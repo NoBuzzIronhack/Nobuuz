@@ -28,5 +28,4 @@ export class LoginFormComponent {
     logout() {
       this.auth.logout().subscribe();
     }
-
 }
