@@ -2,8 +2,9 @@
 <div class="search-url">
 
 <input placeholder="Paste any URL" [(ngModel)]="queryPublic">
-<button class="waves-effect waves-light btn" (click)='searchPubli()' name="button">Search</button>
-
+  <div class="padding-button1">
+<button class=" waves-effect waves-light btn rosa" (click)='searchPubli()' name="button">Search</button>
+</div>
 <div *ngIf="myPubli" class= "">
   <h1 id="publi-title">{{ myPubli.title }}</h1>
   <img src="{{ myPubli.image }}" alt="">

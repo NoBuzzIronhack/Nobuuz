@@ -1,16 +1,18 @@
 body {
   width: 100%;
-  background-color: #F8F4EE;
+  background-color:#fcfcfcff;
   height: 200%;
 }
 
+a {
+  color:#FF005D;
+}
 .search-url {
   margin-top: 20%;
   padding: 0 15px 0 15px;
 }
 
 h1 {
-  text-transform: uppercase;
   font-size: 1.2em;
   text-align: center;
   margin-top: 0px;
@@ -19,15 +21,19 @@ h1 {
 .waves-effect {
   background-color:  white;
 }
+.padding-button1 {
+  margin-left:34px;
+}
 
 .btn {
   /*background-color: #FF3F6C;*/
   opacity: .90;
-  background-color: #FF005D;
+  background-color: black;
+  color: white;
   border-radius: 25px;
   margin-bottom: 10px;
   z-index: 5;
-  margin-bottom: 5%;
+  margin-left: 80px;
 }
 
 img {
@@ -35,6 +41,6 @@ img {
 }
 
 #publi-title {
-  font-family: 'Old Standard TT', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.5em;
 }
