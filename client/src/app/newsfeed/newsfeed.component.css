@@ -36,13 +36,14 @@ span h4 {
 }
 
 h2 {
-  line-height: 44%;
+  line-height: 48%;
+
 }
 
 span h2 {
   font-size: 20px !important;
   font-family: 'Montserrat', sans-serif;
-line-height: 15px;
+line-height: 22px;
 }
 
 .row .col.s12 {
