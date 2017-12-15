@@ -35,13 +35,12 @@
           <div *ngFor = "let book of bookList">
             <div class="col s12 m7">
             <div class="card horizontal">
-              <!-- <div class="card-image"> -->
-               <!-- <img src="{{ book.image }}" alt=""> -->
-              <!-- </div> -->
             <div class="card-stacked">
               <div class= "card-content">
-            <a [routerLink]='["/book-detail/",book.link]' >
+            <a [routerLink]='["/book-detail/",book.link]'>
+                <div class=" book-font-color">
               <p class ="title">{{book.title}}</p>
+            </div>
               <p>by {{book.author}}</p>
             </a>
           </div>
