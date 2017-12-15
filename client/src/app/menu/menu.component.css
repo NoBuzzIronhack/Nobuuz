@@ -1,3 +1,7 @@
+body {
+  background-color: #fcfcfcff;
+}
+
 .menu {
   position: fixed;
   left: 0px;
@@ -33,17 +37,17 @@ i {
   background-color: white;
   position: fixed;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  font-family: 'Didact Gothic', sans-serif;
-  letter-spacing: 4px;
-  font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 5px;
 top: 0px;
 left: 0px;
 right:0px;
 color: #1e1f21ff;
-font-size: 1.1em;
 text-align: center;
 }
 .barra h1 {
-  font-size: 2em;
+  font-size: 1.7em;
   margin-top: 3%;
+  font-weight: 700;
+
 }

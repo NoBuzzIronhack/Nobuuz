@@ -136,7 +136,7 @@ p {
 }
 
 .card {
-  margin: 0.5rem -13px 4rem 15px;
+  margin: 0.5rem -13px 0rem 15px;
 }
 
 .card[_ngcontent-cjs-10]   .card-action[_ngcontent-cjs-10]{
@@ -146,7 +146,6 @@ p {
 
 .card .card-action {
  color: #FF005D;
- padding: 4px 31px;
 }
 
 .btn {
@@ -168,4 +167,17 @@ p {
   opacity: 0.7;
   color: white;
   font-family: 'Roboto', sans-serif;
+}
+
+.container .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row .col.s6 {
+  width: 100%;
+}
+
+.card-wrapper {
+    width: 45%;
 }
